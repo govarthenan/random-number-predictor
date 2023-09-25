@@ -1,5 +1,6 @@
 import requests
 import json
+import random
 
 
 def request_prediction(latest_number):
@@ -27,6 +28,7 @@ def request_prediction(latest_number):
 
 if __name__ == "__main__":
     for i in range(100):
-        response = request_prediction(i)
-
+        random_number = round(random.uniform(0, 100), 2)
+        response = request_prediction(random_number)
+        
         print("Response JSON Data:", response.json())
